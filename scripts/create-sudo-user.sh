@@ -1,58 +1,25 @@
 #!/bin/bash
 
-# Function to check if a user exists
-
-sudo apt install dialog nano vim -y
-
-if [ "$(command -v sudo)" != "/usr/bin/sudo" ]; then
-    echo "sudo is not installed. Installing sudo..."
-    # Update package lists and install sudo
-    apt update -y
-    apt install sudo -y
+# Check if script is run as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "This script must be run as root." >&2
+    exit 1
 fi
 
-user_exists() {
-    if id "$1" &>/dev/null; then
-        return 0  # User exists
-    else
-        return 1  # User does not exist
-    fi
-}
-
-# Function to create a user
-create_user() {
-    username="$1"
-    if ! user_exists "$username"; then
-        sudo useradd -m "$username"
-        echo "User '$username' created successfully."
-    else
-        echo "User '$username' already exists."
-    fi
-}
-
-# Function to add a user to the sudo group
-add_to_sudo_group() {
-    username="$1"
-    if user_exists "$username"; then
-        sudo usermod -aG sudo "$username"
-        echo "User '$username' added to the sudo group."
-    else
-        echo "User '$username' does not exist."
-    fi
-}
-
-# Function to switch to a user
-switch_user() {
-    username="$1"
-    if user_exists "$username"; then
-        su - "$username"
-    else
-        echo "User '$username' does not exist."
-    fi
-}
-
 # Main script
-read -p "Enter the username to create: " username
-create_user "$username"
-add_to_sudo_group "$username"
-switch_user "$username"
+read -p "Enter the username to create: " username_input
+if [ -z "$username_input" ]; then
+    echo "Username cannot be empty." >&2
+    exit 1
+fi
+
+# Create the user
+sudo adduser "$username_input"
+
+# Add the user to the sudo group
+sudo usermod -aG sudo "$username_input"
+
+
+echo "User '$username_input' created and added to the sudo group successfully."
+
+su - $username_input

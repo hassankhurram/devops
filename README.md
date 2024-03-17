@@ -7,7 +7,7 @@ This repository serves as a comprehensive collection of essential DevOps tools, 
 
 - **Ubuntu Minimal Server Essentials**:
   ```bash
-  curl -o- https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh | bash
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"
 
 
 ## Key Features

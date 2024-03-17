@@ -34,6 +34,7 @@
 set -e
 VERSION=0.1
 
+export DEBIAN_FRONTEND=noninteractive
 # Set USER if not exists / can be undefined in containers.
 USER=${USER:-$(id -u -n)}
 # Set HOME Var, may cause an issue if not defined.

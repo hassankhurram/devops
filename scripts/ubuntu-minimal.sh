@@ -35,6 +35,8 @@ set -e
 VERSION=0.1
 
 export DEBIAN_FRONTEND=noninteractive
+POLICY_RC_D_CONTENT="#!/bin/sh\n\nexit 101\n"
+
 # Set USER if not exists / can be undefined in containers.
 USER=${USER:-$(id -u -n)}
 # Set HOME Var, may cause an issue if not defined.
@@ -104,6 +106,14 @@ fi
 if ! user_can_sudo; then
     echo "You should be able to do sudo, please set yourself to sudo." && exit 1;
 fi
+# Create the policy-rc.d file
+echo -e "$POLICY_RC_D_CONTENT" | sudo tee /usr/sbin/policy-rc.d > /dev/null
+
+# Set executable permissions for the file
+sudo chmod +x /usr/sbin/policy-rc.d
+
+echo "policy-rc.d file created successfully."
+
 echo "Updating pre-requisites...";
 sudo apt update -y
 sudo apt upgrade -y

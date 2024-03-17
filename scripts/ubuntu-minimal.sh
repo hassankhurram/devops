@@ -107,12 +107,12 @@ if ! user_can_sudo; then
     echo "You should be able to do sudo, please set yourself to sudo." && exit 1;
 fi
 # Create the policy-rc.d file
-echo -e "$POLICY_RC_D_CONTENT" | sudo tee /usr/sbin/policy-rc.d > /dev/null
+# echo -e "$POLICY_RC_D_CONTENT" | sudo tee /usr/sbin/policy-rc.d > /dev/null
 
 # Set executable permissions for the file
-sudo chmod +x /usr/sbin/policy-rc.d
+# sudo chmod +x /usr/sbin/policy-rc.d
 
-echo "policy-rc.d file created successfully."
+# echo "policy-rc.d file created successfully."
 
 echo "Updating pre-requisites...";
 sudo apt update -y
@@ -162,6 +162,7 @@ fi
 read -p "STEP 6: Do you want to install Tailscale? (y/n):" answer
 if [ "$answer" = "y" ]; then
       curl -fsSL https://tailscale.com/install.sh | sh
+      sudo systemctl start tailscaled
       sudo tailscale up
 fi
 
@@ -231,8 +232,8 @@ fi
 
 echo "ssh using this command now";
 echo "ssh -i ~/.ssh/$(hostname) $USER@$(sudo tailscale ip --4)"
-echo "all things done... rebooting in 5 seconds";
-sleep 5;
+echo "all things done... rebooting in 15 seconds";
+sleep 15;
 sudo reboot now;
 
 

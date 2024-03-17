@@ -13,6 +13,7 @@ sudo adduser "$username_input"
 # Add the user to the sudo group
 sudo usermod -aG sudo "$username_input"
 
-sudo -u "$username_input" sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"
+su - $username_input
+#sudo -u "$username_input" sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"
 
-sudo reboot now
+#sudo reboot now

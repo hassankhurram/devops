@@ -13,16 +13,15 @@ sudo adduser "$username_input"
 # Add the user to the sudo group
 sudo usermod -aG sudo "$username_input"
 
+# Add the user to sudoers file if requested
 read -p "STEP 4: Do you want to add current user '${username_input}' to visudo? (y/n):" answer
 if [ "$answer" = "y" ]; then
-        echo "Adding $username_input to sudoers file..."
-        echo "$username_input ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers > /dev/null
-        echo "User $username_input added to sudoers file."
+    echo "Adding $username_input to sudoers file..."
+    echo "$username_input ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers > /dev/null
+    echo "User $username_input added to sudoers file."
 fi
 
-echo "User '$username_input' created and added to the sudo group successfully."
-
-
-
+# Switch to the newly created user and execute the command
+sudo -u "$username_input" sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"
 
 su - $username_input

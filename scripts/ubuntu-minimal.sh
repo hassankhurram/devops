@@ -98,8 +98,8 @@ echo "Welcome to server ubuntu minimal server essentials v${VERSION}"
 if [ "$(command -v sudo)" != "/usr/bin/sudo" ]; then
     echo "sudo is not installed. Installing sudo..."
     # Update package lists and install sudo
-    sudo apt update -y
-    sudo apt install sudo -y
+    apt update -y
+    apt install sudo -y
 fi
 
 

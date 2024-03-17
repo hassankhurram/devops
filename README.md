@@ -5,6 +5,10 @@ This repository serves as a comprehensive collection of essential DevOps tools, 
 
 ## Scripts
 
+- **Ubuntu Create User**:
+  ```bash
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/create-sudo-user.sh)"
+
 - **Ubuntu Minimal Server Essentials**:
   ```bash
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"

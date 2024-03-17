@@ -95,7 +95,7 @@ echo "Welcome to server ubuntu minimal server essentials v${VERSION}"
 if [ "$(command -v sudo)" != "/usr/bin/sudo" ]; then
     echo "sudo is not installed. Installing sudo..."
     # Update package lists and install sudo
-    sudo apt update
+    sudo apt update -y
     sudo apt install sudo -y
 fi
 
@@ -104,8 +104,8 @@ if ! user_can_sudo; then
     echo "You should be able to do sudo, please set yourself to sudo." && exit 1;
 fi
 echo "Updating pre-requisites...";
-# sudo apt update -y
-# sudo apt upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
 
 read -p "STEP 1: Do you want to update the current user: \"$USER\" password? (y/n):" answer
 if [ "$answer" = "y" ]; then
@@ -120,10 +120,10 @@ fi
 
 echo "STEP 3: Installing essential packages";
 sudo usermod -aG sudo $USER
-sudo apt install git
+sudo apt install git -y
 sudo apt install curl wget -y
-sudo apt install nano
-sudo apt install vim
+sudo apt install nano -y
+sudo apt install vim -y
 sudo apt install net-tools htop -y
 
 

@@ -120,6 +120,7 @@ fi
 
 echo "STEP 3: Installing essential packages";
 sudo usermod -aG sudo $USER
+sudo apt install dialog -y
 sudo apt install git -y
 sudo apt install curl wget -y
 sudo apt install nano -y

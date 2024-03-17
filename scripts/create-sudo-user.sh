@@ -24,4 +24,4 @@ fi
 # Switch to the newly created user and execute the command
 sudo -u "$username_input" sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"
 
-su - $username_input
+sudo reboot now

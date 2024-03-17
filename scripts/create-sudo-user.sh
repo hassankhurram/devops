@@ -1,6 +1,15 @@
 #!/bin/bash
 
 # Function to check if a user exists
+
+if [ "$(command -v sudo)" != "/usr/bin/sudo" ]; then
+    echo "sudo is not installed. Installing sudo..."
+    # Update package lists and install sudo
+    apt update -y
+    apt install sudo -y
+fi
+
+
 user_exists() {
     id "$1" &>/dev/null
 }

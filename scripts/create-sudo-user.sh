@@ -2,8 +2,7 @@
 
 # Function to check if a user exists
 
-sudo apt update -y
-sudo apt install dialog curl nano vim -y
+sudo apt install dialog nano vim -y
 
 if [ "$(command -v sudo)" != "/usr/bin/sudo" ]; then
     echo "sudo is not installed. Installing sudo..."
@@ -13,7 +12,11 @@ if [ "$(command -v sudo)" != "/usr/bin/sudo" ]; then
 fi
 
 user_exists() {
-    id "$1" &>/dev/null
+    if id "$1" &>/dev/null; then
+        return 0  # User exists
+    else
+        return 1  # User does not exist
+    fi
 }
 
 # Function to create a user

@@ -155,7 +155,7 @@ else
     if [ "$answer" = "y" ]; then
         # Install Zsh and Oh My Zsh
         sudo apt install zsh -y
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     fi
 fi
 

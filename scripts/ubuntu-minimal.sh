@@ -136,6 +136,7 @@ sudo apt install git -y
 sudo apt install curl wget -y
 sudo apt install nano -y
 sudo apt install vim -y
+sudo apt install bzip2 -y
 sudo apt install net-tools htop -y
 
 
@@ -198,7 +199,7 @@ if [ "$answer" = "y" ]; then
       ./google-cloud-sdk/install.sh
       ./google-cloud-sdk/bin/gcloud init
       rm -rf ./google-cloud-sdk google-cloud-cli-468.0.0-linux-x86_64.tar.gz
-      gcloud init
+      #gcloud init
 fi
 
 

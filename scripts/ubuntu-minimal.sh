@@ -136,6 +136,7 @@ sudo apt install git -y
 sudo apt install curl wget -y
 sudo apt install nano -y
 sudo apt install vim -y
+sudo apt install build-essential -y
 sudo apt install bzip2 -y
 sudo apt install net-tools htop -y
 

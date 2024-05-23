@@ -131,15 +131,7 @@ fi
 
 echo "STEP 3: Installing essential packages";
 sudo usermod -aG sudo $USER
-sudo apt install dialog -y
-sudo apt install git -y
-sudo apt install curl wget -y
-sudo apt install nano -y
-sudo apt install vim -y
-sudo apt install build-essential -y
-sudo apt install bzip2 -y
-sudo apt install net-tools htop -y
-
+sudo apt install -y dialog libpng-dev libjpeg62-turbo-dev libfreetype6-dev libzip-dev zip unzip git curl wget nano vim build-essential bzip2 net-tools htop zsh 
 
 read -p "STEP 4: Do you want to add current user '${USER}' to visudo? (y/n):" answer
 if [ "$answer" = "y" ]; then

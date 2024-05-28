@@ -13,6 +13,11 @@ This repository serves as a comprehensive collection of essential DevOps tools, 
   ```bash
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"
 
+- **Enable tailscale in Proxmox LXC**:
+  - Run this in proxmox shell: 
+  ```bash
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/enable-tailscale-in-lxc.sh)"
+
 
 ## Key Features
 

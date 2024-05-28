@@ -7,18 +7,16 @@ This repository serves as a comprehensive collection of essential DevOps tools, 
 
 - **Ubuntu Create User**:
   ```bash
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/create-sudo-user.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-server/create-sudo-user.sh)"
 
 - **Ubuntu Minimal Server Essentials**:
   ```bash
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-minimal.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-server/ubuntu-minimal.sh)"
 
-- **Enable tailscale in Proxmox LXC**:
-  - Run this in proxmox shell: 
+- **Enable tailscale in Proxmox LXC (Run this in proxmox shell)**:
   ```bash
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/enable-tailscale-in-lxc.sh)"
-
-
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/proxmox/enable-tailscale-in-lxc.sh)"
+  
 ## Key Features
 
 - Infrastructure as Code (IaC) templates for provisioning and managing cloud resources.

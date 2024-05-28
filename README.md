@@ -10,18 +10,15 @@ This repository serves as a comprehensive collection of essential DevOps tools, 
 - **Ubuntu Create User**:
   ```bash
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-server/create-sudo-user.sh)"
-
 - **Ubuntu Minimal Server Essentials**:
   ```bash
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/ubuntu-server/ubuntu-minimal.sh)"
-
 ### Proxmox HyperVisor
 
   - ### Proxmox LXCs:
     - **Enable tailscale in Proxmox LXC (Run this in proxmox shell)**:
       ```bash
       sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/proxmox/enable-tailscale-in-lxc.sh)"
-
   - ### Proxmox Virtual Machines:
     - **coming soon**
     

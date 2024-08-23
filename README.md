@@ -21,7 +21,13 @@ This repository serves as a comprehensive collection of essential DevOps tools, 
       sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/proxmox/enable-tailscale-in-lxc.sh)"
   - ### Proxmox Virtual Machines:
     - **coming soon**
-    
+
+### Chrome in linux using Selenium
+
+- **Fix Selenium compatibility issues**:
+  ```bash
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/hassankhurram/devops/main/scripts/selenium-fix/chrome-and-driver-fix.sh)"
+
 ## Key Features
 
 - Infrastructure as Code (IaC) templates for provisioning and managing cloud resources.
